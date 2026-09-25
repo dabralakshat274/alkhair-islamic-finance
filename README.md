@@ -21,7 +21,9 @@ npm run dev        # web on http://localhost:5174, API on http://localhost:5001
 | `npm start`         | Run the API; it also serves `dist/` if a build exists |
 | `npm run typecheck` | TypeScript check without emitting                     |
 
-Copy `.env.example` to `.env` to set the Google tag id (`VITE_GTAG_ID`) or the API port.
+Copy `.env.example` to `.env` to set the Google tag id (`VITE_GTAG_ID`), the API port, or the extra hosts the
+dev server accepts (`ALLOWED_HOSTS`, comma-separated; a leading dot allows every subdomain, e.g.
+`.ngrok-free.dev`, and `true` allows any host). Restart `npm run dev` after changing it.
 
 ## Pages
 
