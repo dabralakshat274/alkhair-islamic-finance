@@ -1,6 +1,6 @@
 # dependencies / build
 node_modules
-dist
+/dist
 
 # environment
 .env
