@@ -1,0 +1,23 @@
+# dependencies / build
+node_modules
+dist
+
+# environment
+.env
+.env.*
+!.env.example
+*.local
+
+# runtime data (loan submissions)
+server/data/*.json
+
+# logs
+npm-debug.log*
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea
+.vscode/*
+!.vscode/extensions.json

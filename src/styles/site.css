@@ -1,0 +1,62 @@
+/*
+ * Behaviour the theme's JavaScript used to provide, expressed as CSS:
+ * the slide-in mobile menu (sidr) and its overlay.
+ */
+
+/* Mobile menu panel */
+#sidr {
+  display: block;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 999999;
+  width: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: right 0.3s ease, left 0.3s ease;
+}
+#sidr.right {
+  left: auto;
+  right: -300px;
+}
+body.sidr-open #sidr.right {
+  right: 0;
+}
+
+/* The theme pushes the page aside while the menu is open */
+body {
+  position: relative;
+  left: 0;
+  transition: left 0.3s ease;
+}
+body.sidr-open {
+  left: -300px;
+  overflow-x: hidden;
+}
+
+.oceanwp-sidr-overlay {
+  display: block;
+}
+
+/* Honeypot field stays out of sight */
+.frm_verify_container {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* "Finance" is longer than "Bank", so the eight menu items need slightly less side padding
+   to stay on one line at desktop widths, as the original menu did. */
+@media only screen and (min-width: 960px) {
+  #site-navigation-wrap .dropdown-menu > li > a {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  /* the theme shifts the right-floated menu 15px past the edge to swallow the last item's
+     padding; with 10px padding the shift is 10px */
+  #site-navigation-wrap {
+    left: 10px;
+  }
+}
